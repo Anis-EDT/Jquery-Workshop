@@ -1,10 +1,4 @@
 
-//toggle function  javascript VS jquery
-function toggle(){
-
-
-	$("h1").toggle();
-}
 //SLIDE UP
 $("#slide").click(function(){
 	$("#love").slideUp();
