@@ -1,43 +1,65 @@
-//toggle with javascript
+
+//toggle function  javascript VS jquery
 function toggle(){
-	var x = document.getElementById("hi")
-	if(x.style.display =="none")
-		x.style.display ="block"
+	/*var x = document.getElementById("msg")
+	if(x.style.display == "block")
+	{
+		x.style.display ="none";
+	}
 	else
-		x.style.display ="none"
+		x.style.display ="block";*/
+	$("h1").toggle();
 }
-// toggle with Jquery
-	$("#tog").click(function(){
-		$("#hi").toggle()
-	})
-	// adding the image
-	$("#btn0").click(function(){
-		$("div").append('<img src="images/fun.jpg"/>')
-	})
-	$("#btn").click(function(){
-		$(".elyes").slideUp();
-	})
-	$("#btn1").click(function(){
-		$(".elyes").slideDown();
-	})
-	// When the page finished loading
-	$("document").ready(function(){
-			var x= 0 ; 
-	// rotate 
-	$("#btn2").click(function(){
+//SLIDE UP
+$("#slide").click(function(){
+	$("#love").slideUp();
+})
+//SLIDE DOWN
+$("#slideDown").click(function(){
+	$("#love").slideDown();
+})
+//SLIDE TOGGLE WHEN DOUBLE CLICK
+$("#slideT").dblclick(function(){
+	$("#love").slideToggle("slow","swing");
+})
 
-		setInterval(function(){ 
-			x++
-			$(".elyes").rotate(x);
-			$(".elyese").rotate(-x);
+//this executes when the page is done loading
+$(document).ready(function(){
+	x =0 ;
+	//the event keypress is executed when we click on any function
+	//the selector $(document) means that if we click anywhere inside the document
+ 	//the parameter "event" will tell 
+ $(document).keypress(function(event){
+ 	//event.key : shows the button we clicked on
+ 	console.log(event.key);
 
-		 }, 10);
-		// adding a class to the tag
-		 $("#elyes").addClass("tetzed")		
-		
-	})	})
-		// Event listener on key press ( don't forget to check console !!!!!!!!)
-		$("#input").keypress(function(e){
-			console.log(e);
+ 	if(event.key =="q"){
+ 		 	x +=10;
+}
+if(event.key =="d")
+{x -=10}
+//translates the picture by X pixels
+$('#love').css("transform","translate("+x+"px,"+x+"px)")
+ })
+})
 
-	})
+// rotation
+		var x = 0 ;
+		// adds one degree each 16 MilliSecond
+setInterval(function(){
+			$("#elyes").slideToggle("slow","swing");
+     x++ ;
+	$("#love").rotate(x);
+ 						 }, 16);
+
+setInterval(function(){
+     x++ ;
+	$("#love2").rotate(-x);
+ 						 }, 16);
+
+
+
+
+
+
+
