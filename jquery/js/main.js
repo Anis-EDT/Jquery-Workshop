@@ -1,6 +1,7 @@
 
 //toggle function  javascript VS jquery
 function toggle(){
+
 	/*var x = document.getElementById("msg")
 	if(x.style.display == "block")
 	{
